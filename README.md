@@ -243,7 +243,7 @@ LEFT JOIN runner_orders r
 	ON c.order_id = r.order_id
 GROUP  BY 1;
 
-![B3](https://github.com/user-attachments/assets/8adb10c1-105c-4410-a501-c3d84f098a6c)
+![B3](https://github.com/user-attachments/assets/1aa0a7e4-bd70-48d1-a50c-e120d1006f0f)
 
 
 -- B4. What was the average distance travelled for each customer?
@@ -255,16 +255,14 @@ ON c.order_id = r.order_id
 WHERE distance IS NOT NULL
 GROUP BY c.customer_id;
 
-![B4](https://github.com/user-attachments/assets/6c223126-32b3-49c9-822c-c18286e51880)
-
+![B3](https://github.com/user-attachments/assets/8adb10c1-105c-4410-a501-c3d84f098a6c)
 
 -- B5. What was the difference between the longest and shortest delivery times for all orders?
 
 SELECT (MAX(duration) - MIN(duration)) AS diff
 FROM runner_orders;
 
-![B5](https://github.com/user-attachments/assets/4a1ba04c-4831-4959-895a-82e27e78c0fa)
-
+![B4](https://github.com/user-attachments/assets/6c223126-32b3-49c9-822c-c18286e51880)
 
 -- B6. What was the average speed for each runner for each delivery and do you notice any trend for these values?
 
@@ -276,9 +274,7 @@ WHERE duration IS NOT NULL
 GROUP BY c.order_id,r.runner_id
 ORDER BY runner_id ;
 
-![B6](https://github.com/user-attachments/assets/30896d2d-f374-4604-8ed0-68dcf394ccfa)
-
-
+![B5](https://github.com/user-attachments/assets/4a1ba04c-4831-4959-895a-82e27e78c0fa)
 
 -- B7. What is the successful delivery percentage for each runner?
 
@@ -286,6 +282,9 @@ SELECT runner_id,
 			ROUND(100 * SUM(CASE WHEN cancellation IS NULL THEN 1 ELSE 0 END)/ COUNT(*),0)  AS succesful_deliveries_percentage
 FROM runner_orders
 GROUP BY 1;
+
+![B6](https://github.com/user-attachments/assets/30896d2d-f374-4604-8ed0-68dcf394ccfa)
+
 
 
 -- ** C. Ingredient Optimisation** --
