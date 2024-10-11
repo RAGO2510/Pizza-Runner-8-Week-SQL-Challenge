@@ -39,7 +39,8 @@ Table: Cleaning runner_orders table
 SELECT * 
 FROM runner_orders;
 ```
-![Cust_orders](https://github.com/user-attachments/assets/a400a600-ca0b-44fc-9173-8b07bc891f44)
+![runner_orders_unclean](https://github.com/user-attachments/assets/b4195645-470b-49f4-bc04-7c613a2763ca)
+
 
 -- Replacing 'km' with '' so that the column can be converted to a float later and triming the data to replace white spaces.
 ```bash 
@@ -73,10 +74,6 @@ UPDATE runner_orders
 SET cancellation = NULL
 WHERE cancellation = '';
 ```
-```bash 
-SELECT * 
-FROM runner_orders;
-```
 
 -- Changing data type of pickup_time to timestamp, distance to decimal(5,1), duration to int.
 ```bash 
@@ -89,6 +86,8 @@ MODIFY COLUMN duration INT;
 SELECT * 
 FROM runner_orders;
 ```
+
+![Runner_orders](https://github.com/user-attachments/assets/7398c897-fa02-452b-a9d8-4f2d4308a014)
 
 
 -- Normalize pizza_recipes by creating a new table linking pizza_id and individual topping_id.
@@ -107,6 +106,14 @@ VALUES
     (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 8), (1, 10),
     (2, 4), (2, 6), (2, 7), (2, 9), (2, 11), (2, 12);
 ```
+
+```bash
+SELECT *
+FROM pizza_recipe_toppings;
+```
+
+![pizza_recipe_toppings](https://github.com/user-attachments/assets/6bb4b278-9b1c-45cc-8f3e-9799539337d5)
+
 
 # Analytics 
 
