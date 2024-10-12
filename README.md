@@ -338,6 +338,9 @@ ON pt.topping_id = p.topping_id
 GROUP BY pizza_id;
 ```
 
+![C1](https://github.com/user-attachments/assets/1487f4d3-eb6f-4ff7-8880-534820b3fcb0)
+
+
 -- What was the most commonly added extra?
 ```bash 
 SELECT *
@@ -346,3 +349,5 @@ JOIN pizza_toppings pt
 ON pt.topping_id = c.extras
 WHERE c.extras IS NOT NULL;
 ```
+
+![C2](https://github.com/user-attachments/assets/0b0b0878-95f5-4848-8654-ab18f9cc2773)
